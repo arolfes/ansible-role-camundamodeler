@@ -3,11 +3,11 @@
   hosts: all
 
   roles:
-    - role: ansible-role-camunda-modeler
+    - role: ansible-role-camundamodeler
       cm_version: 3.0.0
 
   post_tasks:
-    - name: verify camunda-modeler facts
+    - name: verify camundamodeler facts
       assert:
         that:
           - ansible_local.camundamodeler.general.version == '3.0.0'

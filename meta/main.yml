@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: camunda-modeler
+  role_name: camundamodeler
   author: Alexander Rolfes
   description: Role for installing Camunda-Modeler.
   license: MIT

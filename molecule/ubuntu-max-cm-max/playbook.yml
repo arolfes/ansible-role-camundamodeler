@@ -3,11 +3,11 @@
   hosts: all
 
   roles:
-    - role: ansible-role-camunda-modeler
+    - role: ansible-role-camundamodeler
       cm_download_url: https://downloads.camunda.cloud/release/camunda-modeler/4.5.0
 
   post_tasks:
-    - name: verify camunda-modeler facts
+    - name: verify camundamodeler facts
       assert:
         that:
           - ansible_local.camundamodeler.general.version == '4.5.0'

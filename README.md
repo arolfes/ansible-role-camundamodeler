@@ -1,9 +1,9 @@
-Ansible Role: camunda-modeler
+Ansible Role: camundamodeler
 ======================================
 
-[![Build Status](https://github.com/arolfes/ansible-role-camunda-modeler/workflows/molecule%20tests/badge.svg?branch=master)](https://github.com/arolfes/ansible-role-camunda-modeler/actions?query=branch%3Amaster+workflow%3A%22molecule+tests%22)
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-arolfes.camunda-modeler-blue.svg)](https://galaxy.ansible.com/arolfes/camunda-modeler)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/arolfes/ansible-role-camunda-modeler/master/LICENSE)
+[![Build Status](https://github.com/arolfes/ansible-role-camundamodeler/workflows/molecule%20tests/badge.svg?branch=master)](https://github.com/arolfes/ansible-role-camundamodeler/actions?query=branch%3Amaster+workflow%3A%22molecule+tests%22)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-arolfes.camundamodeler-blue.svg)](https://galaxy.ansible.com/arolfes/camundamodeler)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/arolfes/ansible-role-camundamodeler/master/LICENSE)
 
 Role to install [https://camunda.com/de/products/camunda-bpm/modeler/](Camunda-Modeler) .
 
@@ -91,13 +91,13 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-     - role: arolfes.camunda-modeler
+     - role: arolfes.camundamodeler
 ```
 You can install a specific version of Camunda-Modeler by specifying the cm_version.
 ```yaml
 - hosts: servers
   roles:
-     - role: arolfes.camunda-modeler
+     - role: arolfes.camundamodeler
        cm_version: '4.0.0'
 ```
 You can provide your own download mirror.
@@ -106,14 +106,14 @@ See testcase [molecule/ubuntu-max-cm-max/playbook.yml](ubuntu-max-cm-max)
 ```yaml
 - hosts: servers
   roles:
-     - role: arolfes.camunda-modeler
+     - role: arolfes.camundamodeler
        cm_download_url: https://downloads.camunda.cloud/release/camunda-modeler/4.5.0
 ```
 You can provide your own patched version.
 ```yaml
 - hosts: servers
   roles:
-     - role: arolfes.camunda-modeler
+     - role: arolfes.camundamodeler
        cm_download_url: https://localhost/camunda-modeler
        cm_redis_filename: camunda-modeler-patched.tar.gz
        cm_redis_sha256sum: '862b48542cd916f7d06ce1f5a3e821eada1ca8b595c34a564671eb8a660fc519'
