@@ -1,0 +1,30 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+lint:
+  name: yamllint
+
+platforms:
+  - name: ansible-role-cm-ubuntu-min
+    image: ubuntu:18.04
+    dockerfile: ../default/Dockerfile.j2
+
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../cm-min/playbook.yml
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: ubuntu-min-cm-min
+
+verifier:
+  name: testinfra
+  directory: ../cm-min/tests
+  lint:
+    name: flake8

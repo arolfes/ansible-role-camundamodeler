@@ -1,0 +1,30 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+lint:
+  name: yamllint
+
+platforms:
+  - name: ansible-role-cm-opensuse
+    image: opensuse/leap:15.1
+    dockerfile: ../default/Dockerfile.j2
+
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../cm-max/playbook.yml
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: opensuse-cm-max
+
+verifier:
+  name: testinfra
+  directory: ../cm-max/tests
+  lint:
+    name: flake8

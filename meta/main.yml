@@ -1,0 +1,34 @@
+---
+galaxy_info:
+  role_name: camunda-modeler
+  author: Alexander Rolfes
+  description: Role for installing Camunda-Modeler.
+  license: MIT
+  min_ansible_version: 2.8.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+    - name: Debian
+      versions:
+        - jessie
+        - buster
+    - name: Fedora
+      versions:
+        - 32
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: opensuse
+      versions:
+        - 15.1
+  galaxy_tags:
+    - camunda
+    - camundamodeler
+    - modeler
+    - bpmn
+    - dmn
+    - cmmn
+dependencies: []

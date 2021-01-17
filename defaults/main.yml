@@ -1,0 +1,15 @@
+---
+# Camunda Modeler Version to download and unpack
+cm_version: '4.5.0'
+
+# Download url for Camunda Modeler tarball
+cm_download_url: 'https://github.com/camunda/camunda-modeler/releases/download/v{{ cm_version }}'
+
+# Filename of camunda-modeler redistributable package
+cm_redis_filename: 'camunda-modeler-{{ cm_version }}-linux-x64.tar.gz'
+
+# Base installation directory
+cm_install_dir: '/opt/camunda-modeler/{{ cm_version }}'
+
+# Directory to store files downloaded for Camunda Modeler installation
+cm_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"

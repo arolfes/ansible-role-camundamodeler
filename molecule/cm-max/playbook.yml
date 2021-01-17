@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all
+
+  roles:
+    - role: ansible-role-camunda-modeler
+
+  post_tasks:
+    - name: verify camunda-modeler facts
+      assert:
+        that:
+          - ansible_local.camundamodeler.general.version == '4.5.0'
+          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/4.5.0'
