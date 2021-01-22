@@ -10,7 +10,8 @@ Role to install [https://camunda.com/de/products/camunda-bpm/modeler/](Camunda-M
 You can start it from shell via `camunda-modeler` or via shortcut from your desktop. (`cp /usr/share/applications/camunda-modeler.desktop ~/Desktop/`)
 
 ```bash
-$ which camunda-modeler
+$ which camunda-modeler 
+/usr/local/bin/camunda-modeler
 
 
 cp /usr/share/applications/camunda-modeler.desktop ~/Desktop/
@@ -82,7 +83,34 @@ cm_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansi
 The following versions of camunda-modeler are supported without any additional configuration
 
 * 4.5.0
+* 4.4.0
+* 4.3.0
+* 4.2.0
+* 4.1.1
+* 4.1.0
 * 4.0.0
+* 3.7.3
+* 3.7.2
+* 3.7.1
+* 3.7.0
+* 3.6.0
+* 3.5.0
+* 3.4.1
+* 3.4.0
+* 3.3.5
+* 3.3.4
+* 3.3.3
+* 3.3.2
+* 3.3.1
+* 3.3.0
+* 3.2.3
+* 3.2.2
+* 3.2.1
+* 3.2.0
+* 3.1.2
+* 3.1.1
+* 3.1.0
+* 3.0.1
 * 3.0.0
 
 Example Playbook
