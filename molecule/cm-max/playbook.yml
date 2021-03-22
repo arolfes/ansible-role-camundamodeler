@@ -9,5 +9,5 @@
     - name: verify camundamodeler facts
       assert:
         that:
-          - ansible_local.camundamodeler.general.version == '4.5.0'
-          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/4.5.0'
+          - ansible_local.camundamodeler.general.version == '4.6.0'
+          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/4.6.0'

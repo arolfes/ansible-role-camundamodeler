@@ -82,6 +82,7 @@ cm_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansi
 
 The following versions of camunda-modeler are supported without any additional configuration
 
+* 4.6.0
 * 4.5.0
 * 4.4.0
 * 4.3.0
