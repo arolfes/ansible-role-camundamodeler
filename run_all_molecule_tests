@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+for d in molecule/*/ ; do
+    d=$(echo ${d#molecule/})
+    scenario=$(echo $d | sed 's:/*$::')
+    if [[ "$scenario" == 'cm-max' ]] || [[ "$scenario" == 'cm-min' ]] ; then
+        continue
+    fi
+    echo "** Running Scenario '$scenario' **"
+    ./moleculew test --scenario-name=$scenario
+done
