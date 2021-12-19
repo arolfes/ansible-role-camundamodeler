@@ -1,0 +1,21 @@
+---
+
+- name: "download plugin {{ plugin_name }}"
+  become: yes
+  get_url:
+    url: '{{ plugin_url }}'
+    dest: '{{ cm_download_dir }}/{{ plugin_name }}'
+    force: no
+    mode: 'u=rw,go=r'
+
+- name: "install plugin {{ plugin_name }}"
+  become: yes
+  unarchive:
+    src: '{{ cm_download_dir }}/{{ plugin_name }}'
+    remote_src: yes
+    dest: '{{ cm_install_dir }}/resources/plugins'
+    owner: root
+    group: root
+    keep_newer: yes
+    mode: 'u=rwx,go=rwx'
+  when: plugin_url is not search("camunda-consulting")

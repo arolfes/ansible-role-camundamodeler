@@ -5,6 +5,11 @@
   roles:
     - role: ansible-role-camundamodeler
       cm_download_url: https://github.com/camunda/camunda-modeler/releases/download/v4.12.0
+      plugins:
+        - name: tooltip
+          url: https://github.com/viadee/camunda-modeler-tooltip-plugin/archive/refs/tags/v0.0.8.tar.gz
+        - name: token-simulation
+          url: https://github.com/bpmn-io/bpmn-js-token-simulation-plugin/archive/refs/heads/master.zip
 
   post_tasks:
     - name: verify camundamodeler facts

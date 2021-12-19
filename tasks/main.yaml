@@ -33,14 +33,14 @@
     mode: 'u=rwx,go=rx'
     dest: '{{ cm_install_dir }}'
 
-- name: install unarchive dependencies (zypper)
+- name: install unarchive dependencies
   become: yes
-  zypper:
+  package:
     name:
       - gzip
       - tar
+      - unzip
     state: present
-  when: ansible_pkg_mgr == 'zypper'
 
 - name: install Camunda-Modeler
   become: yes
@@ -91,3 +91,7 @@
     owner: root
     group: root
     mode: 'u=rw,go=r'
+
+- name: install plugins
+  include_tasks: plugins.yaml
+  when: (plugins is defined)
