@@ -63,7 +63,7 @@ are shown below):
 
 ```yaml
 # Camunda Modeler Version to download and unpack
-cm_version: '4.5.0'
+cm_version: '4.12.0'
 
 # Download url for Camunda Modeler tarball
 cm_download_url: 'https://github.com/camunda/camunda-modeler/releases/download/v{{ cm_version }}'
@@ -82,6 +82,14 @@ cm_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansi
 
 The following versions of camunda-modeler are supported without any additional configuration
 
+* 4.12.0
+* 4.11.1
+* 4.11.0
+* 4.10.0
+* 4.9.0
+* 4.8.1
+* 4.8.0
+* 4.7.0
 * 4.6.0
 * 4.5.0
 * 4.4.0
