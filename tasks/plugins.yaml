@@ -1,0 +1,25 @@
+---
+
+- name: "check if plugins {{ cm_install_dir }}/resources/plugins folder exists"
+  stat:
+    path: "{{ cm_install_dir }}/resources/plugins"
+  register: plugins_folder
+
+- name: create plugins {{ cm_install_dir }}/resources/plugins folder if not exists
+  become: yes
+  file:
+    path: "{{ cm_install_dir }}/resources/plugins"
+    owner: root
+    group: root
+    mode: 'u=rwx,go=rwx'
+    state: directory
+    recurse: yes
+  when: plugins_folder.stat.exists == 'false'
+
+- name: install plugins
+  include_tasks: plugin.yaml
+  loop: "{{ plugins }}"
+  vars:
+    plugin_name: "{{ item.name }}"
+    plugin_url: "{{ item.url }}"
+  when: (plugins is defined)

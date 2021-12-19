@@ -76,6 +76,25 @@ cm_install_dir: '/opt/camunda-modeler/{{ cm_version }}'
 
 # Directory to store files downloaded for Camunda Modeler installation
 cm_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
+
+# downloads and extract camunda modeler plugins to correct place
+# by default it is disabled
+# to enable just add plugins list and for each item define name and the url with zip or tar
+#plugins:
+#  - name: tooltip
+#    url: https://github.com/viadee/camunda-modeler-tooltip-plugin/archive/refs/tags/v0.0.8.tar.gz
+#  - name: property-info 
+#    url: https://github.com/umb/camunda-modeler-property-info-plugin/archive/refs/tags/0.0.2.tar.gz
+#  - name: token-simulation
+#    url: https://github.com/bpmn-io/bpmn-js-token-simulation-plugin/archive/refs/heads/master.zip
+#  - name: autosave
+#    url: https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin/archive/refs/tags/v0.2.0.tar.gz
+#  - name: camunda-modeler-plugin-resize-tasks 
+#    url: https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks/archive/refs/heads/master.zip
+#  - name: camunda-transaction-boundaries
+#    url: https://github.com/bpmn-io/camunda-transaction-boundaries/archive/refs/tags/v1.1.2.tar.gz
+#  - name: bpmn-js-embedded-comments
+#    url: https://github.com/bpmn-io/bpmn-js-embedded-comments/archive/refs/tags/v0.6.1.tar.gz
 ```
 
 ### Supported camunda-modeler Versions
@@ -137,8 +156,29 @@ You can install a specific version of Camunda-Modeler by specifying the cm_versi
      - role: arolfes.camundamodeler
        cm_version: '4.0.0'
 ```
+add additional modeler plugins to be automatically installed
+```yaml
+- hosts: servers
+  roles:
+     - role: arolfes.camundamodeler
+       plugins:
+          - name: tooltip
+            url: https://github.com/viadee/camunda-modeler-tooltip-plugin/archive/refs/tags/v0.0.8.tar.gz
+          - name: property-info 
+            url: https://github.com/umb/camunda-modeler-property-info-plugin/archive/refs/tags/0.0.2.tar.gz
+          - name: token-simulation
+            url: https://github.com/bpmn-io/bpmn-js-token-simulation-plugin/archive/refs/heads/master.zip
+          - name: autosave
+            url: https://github.com/pinussilvestrus/camunda-modeler-autosave-plugin/archive/refs/tags/v0.2.0.tar.gz
+          - name: camunda-modeler-plugin-resize-tasks 
+            url: https://github.com/philippfromme/camunda-modeler-plugin-resize-tasks/archive/refs/heads/master.zip
+          - name: camunda-transaction-boundaries
+            url: https://github.com/bpmn-io/camunda-transaction-boundaries/archive/refs/tags/v1.1.2.tar.gz
+          - name: bpmn-js-embedded-comments
+            url: https://github.com/bpmn-io/bpmn-js-embedded-comments/archive/refs/tags/v0.6.1.tar.gz
+```
 You can provide your own download mirror.
-In this case the latest version (4.5.0) will be downloaded from google and not from github.
+In this case the latest version (4.12.0) will be downloaded from google and not from github.
 See testcase [molecule/ubuntu-max-cm-max/playbook.yml](ubuntu-max-cm-max)
 ```yaml
 - hosts: servers
