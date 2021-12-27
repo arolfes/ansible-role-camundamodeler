@@ -184,7 +184,7 @@ See testcase [molecule/ubuntu-max-cm-max/playbook.yml](ubuntu-max-cm-max)
 - hosts: servers
   roles:
      - role: arolfes.camundamodeler
-       cm_download_url: https://downloads.camunda.cloud/release/camunda-modeler/4.5.0
+       cm_download_url: https://downloads.camunda.cloud/release/camunda-modeler/4.12.0
 ```
 You can provide your own patched version.
 ```yaml
