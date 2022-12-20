@@ -20,7 +20,7 @@
   ansible.builtin.get_url:
     url: '{{ cm_download_url }}/{{ cm_redis_filename }}'
     dest: '{{ cm_download_dir }}/{{ cm_redis_filename }}'
-    sha256sum: '{{ cm_redis_sha256sum }}'
+    checksum: 'sha256:{{ cm_redis_sha256sum }}'
     force: no
     mode: 'u=rw,go=r'
 
