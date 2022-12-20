@@ -16,8 +16,8 @@
     - name: verify camundamodeler facts
       assert:
         that:
-          - ansible_local.camundamodeler.general.version == '4.12.0'
-          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/4.12.0'
+          - ansible_local.camundamodeler.general.version == '5.6.0'
+          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/5.6.0'
 
     - name: install find - required for tests (dnf)
       dnf:
@@ -26,3 +26,10 @@
           - which
         state: present
       when: ansible_pkg_mgr == 'dnf'
+
+    - name: install which - required for tests (zypper)
+      zypper:
+        name:
+          - which
+        state: present
+      when: ansible_pkg_mgr == 'zypper'
