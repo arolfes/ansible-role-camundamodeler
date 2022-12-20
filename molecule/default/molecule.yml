@@ -5,19 +5,20 @@ dependency:
 driver:
   name: docker
 
-lint:
-  name: yamllint
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .
+  flake8
 
 platforms:
   - name: ansible-role-cm-max
-    image: ubuntu:20.04
+    image: ubuntu:22.04
 
 provisioner:
   name: ansible
   playbooks:
-    converge: ../cm-max/playbook.yml
-  lint:
-    name: ansible-lint
+    converge: ../cm-max/converge.yml
 
 scenario:
   name: default
@@ -25,5 +26,3 @@ scenario:
 verifier:
   name: testinfra
   directory: ../cm-max/tests
-  lint:
-    name: flake8

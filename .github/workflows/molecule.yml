@@ -17,8 +17,6 @@ jobs:
       matrix:
         scenarios:
           - default
-          - centos-max-cm-max
-          - centos-min-cm-min
           - debian-max-cm-max
           - debian-min-cm-min
           - fedora-cm-max
@@ -32,9 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.x
-        uses: actions/setup-python@v3.1.2
+        uses: actions/setup-python@v4.3.0
         with:
-          python-version: 3.8
+          python-version: 3.9.12
 
       - name: Install dependencies
         run: |
@@ -42,7 +40,7 @@ jobs:
           pip install pipenv
 
       - name: Use Cache
-        uses: actions/cache@v3.0.2
+        uses: actions/cache@v3.0.11
         with:
           path: ~/.cache/pipenv
           key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
