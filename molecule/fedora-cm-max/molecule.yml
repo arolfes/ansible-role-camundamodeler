@@ -5,20 +5,20 @@ dependency:
 driver:
   name: docker
 
-lint:
-  name: yamllint
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .
+  flake8
 
 platforms:
   - name: ansible-role-cm-max-fedora
-    image: fedora:32
-    dockerfile: ../default/Dockerfile.j2
+    image: fedora:37
 
 provisioner:
   name: ansible
   playbooks:
-    converge: ../cm-max/playbook.yml
-  lint:
-    name: ansible-lint
+    converge: ../cm-max/converge.yml
 
 scenario:
   name: fedora-cm-max
@@ -26,5 +26,3 @@ scenario:
 verifier:
   name: testinfra
   directory: ../cm-max/tests
-  lint:
-    name: flake8

@@ -2,6 +2,13 @@
 - name: Converge
   hosts: all
 
+  pre_tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+      changed_when: no
+      when: ansible_pkg_mgr == 'apt'
+
   roles:
     - role: ansible-role-camundamodeler
       cm_download_url: https://github.com/camunda/camunda-modeler/releases/download/v4.12.0
