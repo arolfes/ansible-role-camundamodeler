@@ -8,7 +8,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 @pytest.mark.parametrize('version_dir_pattern', [
-    '5.6.0$'
+    '5.8.0$'
 ])
 def test_cm_installed(host, version_dir_pattern):
 

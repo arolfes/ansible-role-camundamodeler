@@ -16,8 +16,8 @@
     - name: verify camundamodeler facts
       assert:
         that:
-          - ansible_local.camundamodeler.general.version == '5.6.0'
-          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/5.6.0'
+          - ansible_local.camundamodeler.general.version == '5.8.0'
+          - ansible_local.camundamodeler.general.home == '/opt/camunda-modeler/5.8.0'
 
     - name: install find - required for tests (dnf)
       dnf:
