@@ -1,6 +1,6 @@
 ---
 # Camunda Modeler Version to download and unpack
-cm_version: '5.6.0'
+cm_version: '5.8.0'
 
 # Download url for Camunda Modeler tarball
 cm_download_url: 'https://github.com/camunda/camunda-modeler/releases/download/v{{ cm_version }}'

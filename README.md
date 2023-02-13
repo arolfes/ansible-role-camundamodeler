@@ -96,6 +96,8 @@ cm_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansi
 
 The following versions of camunda-modeler are supported without any additional configuration
 
+* 5.8.0
+* 5.7.0
 * 5.6.0
 * 5.5.1
 * 5.5.0
@@ -158,7 +160,7 @@ You can install a specific version of Camunda-Modeler by specifying the cm_versi
 - hosts: servers
   roles:
      - role: arolfes.camundamodeler
-       cm_version: '5.6.0'
+       cm_version: '5.8.0'
 ```
 add additional modeler plugins to be automatically installed
 ```yaml
@@ -188,7 +190,7 @@ See testcase [molecule/ubuntu-max-cm-max/playbook.yml](ubuntu-max-cm-max)
 - hosts: servers
   roles:
      - role: arolfes.camundamodeler
-       cm_download_url: https://downloads.camunda.cloud/release/camunda-modeler/5.6.0
+       cm_download_url: https://downloads.camunda.cloud/release/camunda-modeler/5.8.0
 ```
 You can provide your own patched version.
 ```yaml
@@ -209,11 +211,11 @@ This role exports the following Ansible facts for use by other roles:
 
 * `ansible_local.camundamodeler.general.version`
 
-    * e.g. `5.6.0`
+    * e.g. `5.8.0`
 
 * `ansible_local.camundamodeler.general.home`
 
-    * e.g. `/opt/camunda/modeler/5.6.0`
+    * e.g. `/opt/camunda/modeler/5.8.0`
 
 Development & Testing
 ---------------------
