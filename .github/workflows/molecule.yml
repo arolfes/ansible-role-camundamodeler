@@ -40,7 +40,7 @@ jobs:
           pip install pipenv
 
       - name: Use Cache
-        uses: actions/cache@v3.2.6
+        uses: actions/cache@v3.3.1
         with:
           path: ~/.cache/pipenv
           key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
